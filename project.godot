@@ -12,7 +12,13 @@ config_version=5
 
 config/name="A Spell Called Gun"
 config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://addons/Todo_Manager/icon.svg"
+
+[autoload]
+
+MenuTemplateManager="*res://Project/Main Menu/Nodes/menu_template_manager.tscn"
+GlobalAscgFunc="*res://Project/Singelton/GlobalASCGFunc.gd"
+GlobalSteamApi="*res://Project/Singelton/GlobalSteamAPI.gd"
 
 [display]
 
@@ -29,7 +35,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/kanban_tasks/plugin.cfg", "res://addons/ColorPreview/plugin.cfg")
+enabled=PackedStringArray()
 
 [godot_idea_board]
 

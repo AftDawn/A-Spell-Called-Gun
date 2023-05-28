@@ -18,6 +18,12 @@ mono_crash.*.json
 # Godot Addon Removal Section
 
 
+# Remove Todo Manager
+addons/Todo_Manager/*
+
+# Remove SimpleTODO
+addons/SimpleTODO/*
+
 # Remove ColorPreview
 addons/ColorPreview/*
 
@@ -31,6 +37,8 @@ addons/godot-git-plugin/*
 # if not compiling for Steam, patch res://Project/Singelton/GlobalFunc.gd with relevant custom code or use "pass" command
 addons/godotsteam/*
 steam_appid.txt
+
+
 
 # Spot to put my Personal Access Token for Godot Git VCS Plugin
 github_pat.txt
