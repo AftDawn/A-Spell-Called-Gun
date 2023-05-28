@@ -14,4 +14,13 @@ export_presets.cfg
 data_*/
 mono_crash.*.json
 
+# Remove Godot Git VCS Plugin
+addons/godot-git-plugin/*
+
+# Remove Godotsteam, will need re-adding if also compiling for Steam from git source
+# if not compiling for Steam, patch res://Project/Singelton/GlobalFunc.gd with relevant custom code or use "pass" command
+addons/godotsteam/*
+steam_appid.txt
+
+# Spot to put my Personal Access Token for Godot Git VCS Plugin
 github_pat.txt
