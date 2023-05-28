@@ -18,10 +18,10 @@ mono_crash.*.json
 # Godot Addon Removal Section
 
 
-# Remove ColourPreview
+# Remove ColorPreview
 addons/ColorPreview/*
 
-# Remove Keban Tasks
+# Remove Kaban Tasks
 addons/kanban_tasks/*
 
 # Remove Godot Git VCS Plugin
