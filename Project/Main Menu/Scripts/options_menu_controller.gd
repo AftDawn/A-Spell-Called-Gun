@@ -1,7 +1,7 @@
 extends Control
 signal  close
 
-const HSliderWLabel = preload("res://addons/EasyMenus/Scripts/slider_w_labels.gd")
+const HSliderWLabel = preload("res://Project/Main Menu/Scripts/slider_w_labels.gd")
 
 @onready var sfx_volume_slider : HSliderWLabel = $%SFXVolumeSlider
 @onready var music_volume_slider: HSliderWLabel = $%MusicVolumeSlider
@@ -12,6 +12,7 @@ const HSliderWLabel = preload("res://addons/EasyMenus/Scripts/slider_w_labels.gd
 @onready var anti_aliasing_2d_option_button: OptionButton = $%AntiAliasing2DOptionButton
 @onready var anti_aliasing_3d_option_button: OptionButton = $%AntiAliasing3DOptionButton
 
+var master_bus_index
 var sfx_bus_index
 var music_bus_index
 var config = ConfigFile.new()
@@ -30,6 +31,9 @@ func on_open():
 	music_bus_index = AudioServer.get_bus_index(OptionsConstants.music_bus_name)
 	
 	load_options()
+
+func _on_master_volume_slider_value_changed(value):
+	set_volume(master_bus_index, value)
 
 func _on_sfx_volume_slider_value_changed(value):
 	set_volume(sfx_bus_index, value)
@@ -56,7 +60,7 @@ func save_options():
 # Loads options and sets the controls values to loaded values. Uses default values if config file
 # does not exist
 func load_options():
-	var err = config.load(OptionsConstants.config_file_name)
+	# var err = config.load(OptionsConstants.config_file_name)
 	
 	var sfx_volume = config.get_value(OptionsConstants.section_name, OptionsConstants.sfx_volume_key_name, 1)
 	var music_volume = config.get_value(OptionsConstants.section_name, OptionsConstants.music_volume_key_name, 1)
@@ -126,3 +130,5 @@ func _input(event):
 	if event.is_action_pressed("ui_cancel") && visible:
 		accept_event()
 		go_back()
+
+

@@ -10,5 +10,11 @@ const option_file_path = "user://"
 const option_file_name = "Options"
 const option_file_extension = ".ascgopts"
 
-func save_options():
+func _options_exist() -> bool:
+	if 1 == 1:
+		return true
+	else:
+		return false
+
+func save_options() -> void:
 	pass

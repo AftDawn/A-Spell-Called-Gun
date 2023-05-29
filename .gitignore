@@ -14,15 +14,15 @@ export_presets.cfg
 data_*/
 mono_crash.*.json
 
+# Ignore Exported Versions of the Game
+Exports/*
 
 # Godot Addon Removal Section
 
 
-# Remove Todo Manager
-addons/Todo_Manager/*
-
 # Remove SimpleTODO
 addons/SimpleTODO/*
+TODO.cfg
 
 # Remove ColorPreview
 addons/ColorPreview/*
